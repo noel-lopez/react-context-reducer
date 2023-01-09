@@ -1,6 +1,10 @@
 import { useState } from 'react'
+import { useAppContext } from '../context/AppProvider'
 
 const Form = () => {
+
+  const {dispatch} = useAppContext()
+
   const [name, setName] = useState('')
   const [quantity, setQuantity] = useState(0)
   const [price, setPrice] = useState(0)
@@ -12,6 +16,7 @@ const Form = () => {
     setName('')
     setQuantity(0)
     setPrice(0)
+    dispatch({ type: 'ADD_PRODUCT', payload: product })
   }
 
   return (

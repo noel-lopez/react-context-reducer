@@ -1,15 +1,18 @@
 import Budget from './components/Budget'
 import Form from './components/Form'
 import List from './components/List'
+import { AppProvider } from './context/AppProvider'
 
 function App() {
   return (
-    <div className='container mt-3'>
-      <Budget />
-      <Form />
-      <hr />
-      <List />
-    </div>
+    <AppProvider>
+      <div className='container mt-3'>
+        <Budget />
+        <Form />
+        <hr />
+        <List />
+      </div>
+    </AppProvider>
   )
 }
 
